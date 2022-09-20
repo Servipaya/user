@@ -14,11 +14,12 @@ class LoginPage extends GetView<LoginController> {
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               alignment: Alignment.center,
               child: Image.asset(
-                "assets/images/logo.png",
+                "assets/inicio/Paya.png",
                 fit: BoxFit.cover,
                 height: 230,
                 width: 180,
@@ -26,6 +27,36 @@ class LoginPage extends GetView<LoginController> {
             ),
             const SizedBox(
               height: 40,
+            ),
+            const Text("Usuario",
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+            const SizedBox(
+              height: 25,
+            ),
+            const TextField(
+              decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(),
+                  hintText: "Ingrese numero de celular"),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text("Clave",
+                style: TextStyle(fontSize: 20, color: Colors.white)),
+            const SizedBox(
+              height: 25,
+            ),
+            const TextField(
+              decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(),
+                  hintText: "Ingrese Clave"),
+            ),
+            const SizedBox(
+              height: 50,
             ),
           ],
         ),
