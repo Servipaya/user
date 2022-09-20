@@ -9,14 +9,27 @@ class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('LoginPage'),
-      // ),
-      body: IconHeader(
-        icon: FontAwesomeIcons.plus,
-        titulo: 'Haz solicitado',
-        subtitulo: 'Asistencia Médica',
-      ),
+      backgroundColor: const Color(0xff154c79),
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Column(
+          children: [
+            Container(
+              alignment: Alignment.center,
+              child: Image.asset(
+                "assets/images/logo.png",
+                fit: BoxFit.cover,
+                height: 230,
+                width: 180,
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+          ],
+        ),
+      )),
     );
   }
 }

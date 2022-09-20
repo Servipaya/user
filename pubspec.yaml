@@ -31,11 +31,12 @@ dependencies:
 
   flutter:
     sdk: flutter
-  get: ^4.6.5
   font_awesome_flutter: ^10.1.0
+  get: ^4.6.5
 
 dev_dependencies:
   change_app_package_name: ^1.1.0
+  firebase_core: ^1.22.0
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
