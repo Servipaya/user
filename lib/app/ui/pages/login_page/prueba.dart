@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:user/app/ui/theme/header_widget.dart';
 
-class PruebaPage extends StatefulWidget {
-  const PruebaPage({Key? key}) : super(key: key);
+class PruebaLoginPage extends StatefulWidget {
+  const PruebaLoginPage({Key? key}) : super(key: key);
 
   @override
-  _PruebaPageState createState() => _PruebaPageState();
+  _PruebaLoginPageState createState() => _PruebaLoginPageState();
 }
 
-class _PruebaPageState extends State<PruebaPage> {
+class _PruebaLoginPageState extends State<PruebaLoginPage> {
   double _headerHeight = 250;
   Key _formKey = GlobalKey<FormState>();
 

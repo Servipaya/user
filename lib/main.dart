@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:user/app/ui/pages/login_page/prueba.dart';
 
 import 'app/data/models/model_prueba.dart';
 import 'app/ui/pages/login_page/login_page.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: PruebaPage(), // items),
+      home: PruebaLoginPage(), // items),
     );
   }
 }
