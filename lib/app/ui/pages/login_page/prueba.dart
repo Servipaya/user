@@ -15,14 +15,20 @@ class _PruebaLoginPageState extends State<PruebaLoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      //backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(
+              height: 80,
+            ),
             Container(
               height: _headerHeight,
-              child: HeaderWidget(_headerHeight, true,
-                  Icons.login_rounded), //let's create a common header widget
+              child: HeaderWidget(
+                  _headerHeight,
+                  true,
+                  //    //Icons.login_rounded),
+                  Icons.login_rounded),
             ),
           ],
         ),

@@ -1,3 +1,5 @@
+// ignore_for_file: no_logic_in_create_state, unnecessary_new, deprecated_member_use, sized_box_for_whitespace, prefer_const_constructors, prefer_final_fields
+
 import 'package:flutter/material.dart';
 
 class HeaderWidget extends StatefulWidget {
@@ -9,14 +11,15 @@ class HeaderWidget extends StatefulWidget {
       : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HeaderWidgetState createState() =>
       _HeaderWidgetState(_height, _showIcon, _icon);
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
-  double _height;
-  bool _showIcon;
-  IconData _icon;
+  final double _height;
+  final bool _showIcon;
+  final IconData _icon;
 
   _HeaderWidgetState(this._height, this._showIcon, this._icon);
 
@@ -24,10 +27,12 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
 
+    // ignore: avoid_unnecessary_containers
     return Container(
       child: Stack(
         children: [
           ClipPath(
+            // ignore: sort_child_properties_last
             child: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
@@ -37,10 +42,11 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     ],
                     begin: const FractionalOffset(0.0, 0.0),
                     end: const FractionalOffset(1.0, 0.0),
-                    stops: [0.0, 1.0],
+                    stops: const [0.0, 1.0],
                     tileMode: TileMode.clamp),
               ),
             ),
+
             clipper: new ShapeClipper([
               Offset(width / 5, _height),
               Offset(width / 10 * 5, _height - 60),
@@ -49,6 +55,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             ]),
           ),
           ClipPath(
+            // ignore: sort_child_properties_last
             child: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
@@ -58,7 +65,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     ],
                     begin: const FractionalOffset(0.0, 0.0),
                     end: const FractionalOffset(1.0, 0.0),
-                    stops: [0.0, 1.0],
+                    stops: const [0.0, 1.0],
                     tileMode: TileMode.clamp),
               ),
             ),
@@ -70,6 +77,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
             ]),
           ),
           ClipPath(
+            // ignore: sort_child_properties_last
             child: Container(
               decoration: new BoxDecoration(
                 gradient: new LinearGradient(
@@ -79,7 +87,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     ],
                     begin: const FractionalOffset(0.0, 0.0),
                     end: const FractionalOffset(1.0, 0.0),
-                    stops: [0.0, 1.0],
+                    stops: const [0.0, 1.0],
                     tileMode: TileMode.clamp),
               ),
             ),

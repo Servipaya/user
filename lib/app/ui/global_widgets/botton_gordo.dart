@@ -89,13 +89,13 @@ class _BotonGordoBackground extends StatelessWidget {
       ),
       width: double.infinity,
       height: 100,
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.red,
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.black.withOpacity(0.20),
-              offset: Offset(4, 6),
+              offset: const Offset(4, 6),
               blurRadius: 10)
         ],
         borderRadius: BorderRadius.circular(15),

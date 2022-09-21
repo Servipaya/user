@@ -1,13 +1,18 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:user/app/ui/pages/register_page/register_page.dart';
-import 'package:user/app/ui/theme/header_paya.dart';
 import 'package:user/app/ui/theme/theme_paya.dart';
 
-import '../../../controllers/login_controller.dart';
+import '../../../controllers/prueba_controller.dart';
 
-// ignore: use_key_in_widget_constructors
-class LoginPage extends GetView<LoginController> {
+import '../../global_widgets/headers.dart';
+
+class PruebaPageLogin extends GetView<PruebaController> {
+  // const PruebaPageLogin({
+  //   Key? key,
+  //   required this.items,
+  // }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     //final items = this.items;
@@ -18,8 +23,7 @@ class LoginPage extends GetView<LoginController> {
         alignment: AlignmentDirectional.topCenter,
         children: const <Widget>[
           //HeaderDiagonal(),
-          HeaderWaveTwoAbajo(),
-
+          HeaderWaveGradient(),
           ImagePaya(),
         ],
       ),
@@ -37,7 +41,7 @@ class ImagePaya extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: 100,
+          height: 80,
         ),
         Image.asset(
           "assets/inicio/Paya.png",
@@ -66,9 +70,12 @@ class ListLogin extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(
+          height: 30,
+        ),
         const Text("Usuario",
             style: TextStyle(
-                fontSize: 20, color: Color.fromARGB(255, 157, 34, 234))),
+                fontSize: 20, color: Color.fromARGB(255, 186, 104, 200))),
         const SizedBox(
           height: 15,
         ),
@@ -84,7 +91,7 @@ class ListLogin extends StatelessWidget {
         ),
         const Text("Clave",
             style: TextStyle(
-                fontSize: 20, color: Color.fromARGB(255, 157, 34, 234))),
+                fontSize: 20, color: Color.fromARGB(255, 186, 104, 200))),
         const SizedBox(
           height: 15,
         ),
@@ -100,14 +107,13 @@ class ListLogin extends StatelessWidget {
         ),
         Center(
           child: Container(
-            decoration: ThemeHelper().buttonBoxDecoration(
-                context, "", ""), //"eb2207", "6D05E8" , "3936F5"
+            decoration: ThemeHelper().buttonBoxDecoration(context),
             child: ElevatedButton(
               style: ThemeHelper().buttonStyle(),
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                 child: Text(
-                  'Ingresar'.toUpperCase(),
+                  'Sign In'.toUpperCase(),
                   // ignore: prefer_const_constructors
                   style: TextStyle(
                       fontSize: 20,
@@ -120,27 +126,6 @@ class ListLogin extends StatelessWidget {
               },
             ),
           ),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "No tengo cuenta?   ",
-              style: TextStyle(fontSize: 15, color: Colors.black),
-            ),
-            InkWell(
-              onTap: () {
-                Get.to(RegisterPage());
-              },
-              child: const Text(
-                " Registro",
-                style: TextStyle(fontSize: 15, color: Colors.redAccent),
-              ),
-            ),
-          ],
         ),
       ],
     );

@@ -35,12 +35,31 @@ class PruebaPage extends GetView<PruebaController> {
       //backgroundColor: Colors.red,
       body: Stack(
         children: <Widget>[
+          // _Encabezado(),
+          HeaderWaveGradient(),
+          Column(children: [
+            const SizedBox(
+              height: 80,
+            ),
+            Center(
+              child: Image.asset(
+                "assets/inicio/Paya.png",
+                fit: BoxFit.cover,
+                height: 120,
+                width: 230,
+              ),
+            ),
+          ]),
+          const SizedBox(
+            height: 80,
+          ),
+
           Container(
-            margin: EdgeInsets.only(top: 250),
+            margin: const EdgeInsets.only(top: 200),
             child: ListView(
-              physics: BouncingScrollPhysics(),
+              physics: const BouncingScrollPhysics(),
               children: <Widget>[
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
                 ...itenMap
@@ -49,7 +68,6 @@ class PruebaPage extends GetView<PruebaController> {
               ],
             ),
           ),
-          _Encabezado(),
         ],
       ),
     );
@@ -71,9 +89,10 @@ class _Encabezado extends StatelessWidget {
           top: 45,
           child: RawMaterialButton(
             onPressed: () {},
-            shape: CircleBorder(),
-            padding: EdgeInsets.all(15.0),
-            child: FaIcon(FontAwesomeIcons.ellipsisV, color: Colors.white),
+            shape: const CircleBorder(),
+            padding: const EdgeInsets.all(15.0),
+            child: const FaIcon(FontAwesomeIcons.ellipsisV,
+                color: Color.fromARGB(255, 255, 255, 255)),
           ),
         )
       ],

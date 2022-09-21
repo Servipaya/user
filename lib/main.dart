@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:user/app/ui/pages/login_page/prueba.dart';
+import 'package:user/app/ui/pages/login_page/prueba_login.dart';
 
 import 'app/data/models/model_prueba.dart';
 import 'app/ui/pages/login_page/login_page.dart';
@@ -23,8 +24,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        primaryColor: Color.fromARGB(255, 157, 34, 234),
+        accentColor: Color.fromARGB(255, 157, 34, 234),
       ),
-      home: PruebaLoginPage(), // items),
+      //home: PruebaPage(),
+      home: LoginPage(), // items),
     );
   }
 }

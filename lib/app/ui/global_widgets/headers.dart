@@ -1,8 +1,7 @@
-// ignore_for_file: unused_element
+// ignore_for_file: unused_element, sized_box_for_whitespace, prefer_const_declarations, unnecessary_this
 
 import 'package:flutter/material.dart';
 
-import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // ignore: use_key_in_widget_constructors
@@ -10,7 +9,7 @@ class HeaderBordesRedondeados extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Container(
       height: 300,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xff683687),
         borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(70), bottomRight: Radius.circular(70)),
@@ -36,7 +35,7 @@ class _HeaderDiagonalPainter extends CustomPainter {
     final lapiz = Paint();
 
 //Propiedades
-    lapiz.color = Color(0xff683687);
+    lapiz.color = const Color(0xff683687);
     //lapiz.style = PaintingStyle.stroke;  //stroke para dibujar con el lapiz
     lapiz.style = PaintingStyle.fill; //fill para rellenar lo dibujado
     //lapiz.strokeWidth = 20;
@@ -78,7 +77,7 @@ class _HeaderCurvoPainter extends CustomPainter {
     final lapiz = Paint();
 
 //Propiedades
-    lapiz.color = Color(0xff683687);
+    lapiz.color = const Color(0xff683687);
     //lapiz.style = PaintingStyle.stroke;  //stroke para dibujar con el lapiz
     lapiz.style = PaintingStyle.fill; //fill para rellenar lo dibujado
     //lapiz.strokeWidth = 20;
@@ -144,7 +143,8 @@ class _HeaderWaveGradientPainter extends CustomPainter {
         end: Alignment.bottomCenter,
         colors: <Color>[
           Color(0xff6D05E8),
-          Color(0xffC012FF),
+          Color.fromARGB(255, 157, 34, 234),
+          // Color(0xffC012FF),
           Color(0xff6D05FA),
         ],
         stops: [
@@ -167,12 +167,21 @@ class _HeaderWaveGradientPainter extends CustomPainter {
     // Dibujar con el path y el lapiz
 
     //todo: Ola hacia arriba
-    path.lineTo(0, size.height * 0.3);
-    path.quadraticBezierTo(size.width * 0.25, size.height * 0.35,
-        size.width * .5, size.height * 0.3);
+    //path.lineTo(0, size.height * 0.3);
+    //path.quadraticBezierTo(size.width * 0.25, size.height * 0.35,
+    //    size.width * .5, size.height * 0.3);
+    //path.quadraticBezierTo(
+    //    size.width * 0.75, size.height * 0.25, size.width, size.height * 0.3);
+    //path.lineTo(size.width, 0);
+
+    //todo: Ola hacia abajo
+    path.moveTo(0, size.height * 0.75);
+    path.quadraticBezierTo(size.width * 0.25, size.height * 0.80,
+        size.width * .5, size.height * 0.75);
     path.quadraticBezierTo(
-        size.width * 0.75, size.height * 0.25, size.width, size.height * 0.3);
-    path.lineTo(size.width, 0);
+        size.width * 0.75, size.height * 0.7, size.width, size.height * 0.75);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
 
     canvas.drawPath(path, lapiz);
   }
@@ -190,13 +199,14 @@ class IconHeader extends StatelessWidget {
   final Color color1;
   final Color color2;
 
-  IconHeader({
+  const IconHeader({
+    Key? key,
     required this.icon,
     required this.titulo,
     required this.subtitulo,
-    this.color1 = const Color(0xff526BF6),
+    this.color1 = const Color(0xffC012FF),
     this.color2 = const Color(0xff673AC2),
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -255,7 +265,7 @@ class _IconHeaderBackground extends StatelessWidget {
       width: double.infinity,
       height: 300,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(80)),
+        borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(80)),
         gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
