@@ -44,6 +44,7 @@ class ListaRegister extends StatelessWidget {
               height: 70,
             ),
             TextFormField(
+              textCapitalization: TextCapitalization.sentences,
               decoration: const InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
@@ -51,6 +52,7 @@ class ListaRegister extends StatelessWidget {
                     borderSide: BorderSide(color: Colors.black87, width: 1.5),
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 hintText: "Ingrese nombre",
+                labelText: "Nombre",
                 prefixIcon: Icon(
                   Icons.person,
                   color: Color.fromARGB(255, 157, 34, 234),

@@ -1,10 +1,16 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hexcolor/hexcolor.dart';
+
 import 'package:user/app/ui/pages/register_page/register_page.dart';
 import 'package:user/app/ui/theme/header_paya.dart';
 import 'package:user/app/ui/theme/theme_paya.dart';
 
 import '../../../controllers/login_controller.dart';
+
+Color purpleColor = const Color.fromARGB(255, 157, 34, 234);
 
 // ignore: use_key_in_widget_constructors
 class LoginPage extends GetView<LoginController> {
@@ -66,9 +72,7 @@ class ListLogin extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text("Usuario",
-            style: TextStyle(
-                fontSize: 20, color: Color.fromARGB(255, 157, 34, 234))),
+        Text("Usuario", style: TextStyle(fontSize: 20, color: purpleColor)),
         const SizedBox(
           height: 15,
         ),
@@ -82,9 +86,11 @@ class ListLogin extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        const Text("Clave",
+        Text("Clave",
             style: TextStyle(
-                fontSize: 20, color: Color.fromARGB(255, 157, 34, 234))),
+              fontSize: 20,
+              color: purpleColor,
+            )),
         const SizedBox(
           height: 15,
         ),

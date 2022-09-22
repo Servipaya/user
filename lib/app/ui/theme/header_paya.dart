@@ -1,8 +1,8 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_declarations, unused_local_variable
+// ignore_for_file: sized_box_for_whitespace, prefer_const_declarations, unused_local_variable, unnecessary_cast
 
 import 'package:flutter/material.dart';
 
-Color purpleColor = Color.fromARGB(255, 157, 34, 234);
+Color purpleColor = const Color.fromARGB(255, 157, 34, 234);
 Color cyanColor = const Color(0xFF99D5E5);
 
 class HeaderWaveGradiente extends StatelessWidget {
@@ -159,8 +159,8 @@ class _HeaderWaveTwoAbajo extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: <Color>[
-          Color.fromARGB(233, 57, 54, 245),
           // Color(0xffC012FF),
+          Color.fromARGB(233, 57, 54, 245),
           Color.fromARGB(255, 5, 126, 232),
           Color.fromARGB(150, 139, 196, 241),
         ],
@@ -229,36 +229,36 @@ class _HeaderWaveTwoArriba extends CustomPainter {
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: <Color>[
-          Color.fromARGB(233, 57, 54, 245),
           // Color(0xffC012FF),
-          Color.fromARGB(255, 5, 126, 232),
           Color.fromARGB(150, 139, 196, 241),
+          Color.fromARGB(255, 5, 126, 232),
+          Color.fromARGB(233, 57, 54, 245),
         ],
         stops: [
-          0.2,
-          0.5,
           1.0,
+          0.5,
+          0.2,
         ]);
 
     final lapiz = Paint()..shader = gradient.createShader(rect);
     final alto = 0.0;
 
     Path color2Path = Path();
-    color2Path.lineTo(0, size.height * (alto + 0.20));
-    color2Path.quadraticBezierTo(size.width * 0.25, size.height * (alto + 0.23),
-        size.width * .5, size.height * (alto + 0.17));
-    color2Path.quadraticBezierTo(size.width * 0.75, size.height * (alto + 0.22),
-        size.width, size.height * (alto + 0.10));
+    color2Path.lineTo(0, size.height * (alto + 0.25));
+    color2Path.quadraticBezierTo(size.width * 0.25, size.height * (alto + 0.15),
+        size.width * .5, size.height * (alto + 0.20));
+    color2Path.quadraticBezierTo(size.width * 0.75, size.height * (alto + 0.28),
+        size.width, size.height * (alto + 0.18));
     color2Path.lineTo(size.width, 0);
     //paint.color = lapiz;
     canvas.drawPath(color2Path, lapiz);
 
     Path color1Path = Path();
-    color1Path.lineTo(0, size.height * (alto + 0.10));
-    color1Path.quadraticBezierTo(size.width * 0.25, size.height * (alto + 0.18),
-        size.width * .5, size.height * (alto + 0.10));
-    color1Path.quadraticBezierTo(size.width * 0.75, size.height * (alto + 0.15),
-        size.width, size.height * (alto + 0.08));
+    color1Path.lineTo(0, size.height * (alto + 0.15));
+    color1Path.quadraticBezierTo(size.width * 0.25, size.height * (alto + 0.08),
+        size.width * .5, size.height * (alto + 0.15));
+    color1Path.quadraticBezierTo(size.width * 0.75, size.height * (alto + 0.20),
+        size.width, size.height * (alto + 0.15));
     color1Path.lineTo(size.width, 0);
 
     paint.color = purpleColor;
